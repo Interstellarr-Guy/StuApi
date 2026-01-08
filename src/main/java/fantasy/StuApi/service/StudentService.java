@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import fantasy.StuApi.model.Student;
 import fantasy.StuApi.repository.StudentRepository;
 
+
 @Service
 public class StudentService {
 

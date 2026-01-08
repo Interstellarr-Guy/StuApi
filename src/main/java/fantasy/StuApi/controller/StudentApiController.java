@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import fantasy.StuApi.model.Student;
 
+import fantasy.StuApi.model.Student;
 import fantasy.StuApi.service.StudentService;
 
 @CrossOrigin(origins="*")  // allow front end to call an API
