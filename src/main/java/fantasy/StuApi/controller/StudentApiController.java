@@ -27,6 +27,7 @@ public class StudentApiController  {
 		this.studentService = studentService;
 	}
 	
+	// Getting students
 	@GetMapping
 	public List <Student> getStudents(){
 		return studentService.getAllStudents();
