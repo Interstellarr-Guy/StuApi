@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
 
 @Component
 public class JwtUtil {
@@ -21,4 +22,12 @@ public class JwtUtil {
         .signWith(Keys.hmacShaKeyFor(SECRET.getBytes()), SignatureAlgorithm.HS256)
         .compact();
   }
+  
+  @PostConstruct
+  public void checkSecret() {
+    if (SECRET == null || SECRET.length() < 32) {
+      throw new IllegalStateException("JWT secret is missing or too short");
+    }
+  }
+
 }
