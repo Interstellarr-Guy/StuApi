@@ -17,7 +17,7 @@ import fantasy.StuApi.service.StudentService;
 
 @CrossOrigin(origins="*")  // allow front end to call an API
 @RestController
-@RequestMapping("/cazoo/5122/list")
+@RequestMapping("/cazoo")
 public class StudentApiController  {
 
 	private final StudentService studentService;
@@ -28,7 +28,7 @@ public class StudentApiController  {
 	}
 	
 	// Getting students
-	@GetMapping
+	@GetMapping("/5122/list")
 	public List <Student> getStudents(){
 		return studentService.getAllStudents();
 	}
