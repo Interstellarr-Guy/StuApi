@@ -12,7 +12,7 @@ import jakarta.annotation.PostConstruct;
 @Component
 public class JwtUtil {
 
-  private final String SECRET = "CHANGE_THIS_SECRET_KEY_123456";
+  private final String SECRET = "CHANGE_THIS_SECRET_KEY_1234567891";
 
   public String generateToken(String username) {
     return Jwts.builder()
