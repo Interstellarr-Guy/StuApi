@@ -16,17 +16,17 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http
-            // ❌ disable defaults
+            //  disable defaults
             .csrf(AbstractHttpConfigurer::disable)
             .formLogin(AbstractHttpConfigurer::disable)
             .httpBasic(AbstractHttpConfigurer::disable)
 
-            // ✅ stateless JWT
+            //  stateless JWT
             .sessionManagement(session ->
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
 
-            // ✅ authorization rules
+            //  authorization rules
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(
                     "/auth/**",
