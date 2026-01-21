@@ -31,4 +31,15 @@ public class JwtUtil {
       throw new IllegalStateException("JWT secret is missing or too short");
     }
   }
+    //Latest adding 2101
+  public String extractUsername(String token) {
+	    return Jwts.parserBuilder()
+	        .setSigningKey(Keys.hmacShaKeyFor(secret.getBytes()))
+	        .build()
+	        .parseClaimsJws(token)
+	        .getBody()
+	        .getSubject();
+	}
+
+  
 }
