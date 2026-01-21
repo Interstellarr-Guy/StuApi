@@ -31,6 +31,7 @@ public class SecurityConfig {
                 .requestMatchers(
                     "/auth/**",
                     "/actuator/**",
+                    "/cazoo/**",
                     "/error"
                 ).permitAll()
                 .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
