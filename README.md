@@ -1,2 +1,2 @@
 # StuApi
-A trail app 
+A prod app 
