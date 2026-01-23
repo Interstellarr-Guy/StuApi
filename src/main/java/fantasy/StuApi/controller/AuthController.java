@@ -27,7 +27,7 @@ public class AuthController {
 
     // TEMP: hardcoded user (later DB)
     if ("admin".equals(req.username()) && "admin123".equals(req.password())) {
-      String token = jwtUtil.generateToken(req.username());
+      String token = jwtUtil.generateToken(req.username(),"ADMIN");
       return Map.of("token", token);
     }
 
