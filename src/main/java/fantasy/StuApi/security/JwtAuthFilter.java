@@ -51,15 +51,19 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                                 List.of(authority) // new role attached
                         );
 
-                SecurityContextHolder.getContext().setAuthentication(auth); }
+                SecurityContextHolder.getContext().setAuthentication(auth);
+                
+                System.out.println("roles from token "+ role);
+                }
 
             } catch (Exception e) {
                 // Invalid token → ignore
                 SecurityContextHolder.clearContext();
             }
         }
-
+         
         // 
         filterChain.doFilter(request, response);
     }
+     
 }
