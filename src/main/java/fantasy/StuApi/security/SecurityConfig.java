@@ -40,7 +40,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                
                 //Role based access
-           .requestMatchers("/cazoo/**").hasAuthority("ADMIN")
+           .requestMatchers("/cazoo/**").hasRole("ADMIN")
             
                 //All other api's need login
             .anyRequest().authenticated()  
