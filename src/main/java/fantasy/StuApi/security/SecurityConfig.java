@@ -42,7 +42,11 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .anyRequest().authenticated()
             )
-
+            //new check 30-01
+            
+            .authorizeHttpRequests(auth -> auth
+               .requestMatchers("/cazoo/**").hasAuthority("ADMIN"))
+               
             .addFilterBefore(
             	    jwtAuthFilter,
             	    UsernamePasswordAuthenticationFilter.class
