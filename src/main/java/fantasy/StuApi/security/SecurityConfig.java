@@ -36,17 +36,17 @@ public class SecurityConfig {
                 .requestMatchers(
                     "/auth/**",
                     "/actuator/**",
-                    "/error",
-                    "/"
-                ).permitAll()
+                    "/error").permitAll()
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .anyRequest().authenticated()
-            )
-            //new check 30-01
-            
-            .authorizeHttpRequests(auth -> auth
-               .requestMatchers("/cazoo/**").hasAuthority("ADMIN"))
                
+                //Role based access
+           .requestMatchers("/cazoo/**").hasAuthority("ADMIN")
+            
+                //All other api's need login
+            .anyRequest().authenticated()  
+            )
+               
+
             .addFilterBefore(
             	    jwtAuthFilter,
             	    UsernamePasswordAuthenticationFilter.class
