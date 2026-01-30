@@ -41,6 +41,17 @@ public class JwtUtil {
 	        .getBody()
 	        .getSubject();
 	}
+  
+  // new method 30-01 extract role
+  public String extractRole(String token) {
+	    return Jwts.parserBuilder()
+	            .setSigningKey(Keys.hmacShaKeyFor(secret.getBytes()))
+	            .build()
+	            .parseClaimsJws(token)
+	            .getBody()
+	            .get("roles", String.class);
+	}
+
 
   
 }
