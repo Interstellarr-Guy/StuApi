@@ -27,6 +27,7 @@ Deployment
 
 Note:
 * This is backend REST API
-* to use --> connect with frontend UI 
+* frontend UI in another Repo
+   
 Frontend Repo: Interstellarr-Guy/StudentReactUI
 Website link: studentlistapi.netlify.app/
