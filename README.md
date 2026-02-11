@@ -29,5 +29,5 @@ Note:
 * This is backend REST API
 * frontend UI in another Repo
    
-Frontend Repo: Interstellarr-Guy/StudentReactUI
+Frontend Repo: Interstellarr-Guy/StudentReactUI.
 Website link: studentlistapi.netlify.app/
